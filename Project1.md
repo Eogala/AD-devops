@@ -4,10 +4,9 @@
 ### PROJECT FOCUS : 
 Installation Nginx on Eilte’s corperations Web servers and Apache on their database servers using Ansible playbooks and roles:
 
-The project  involves Setting up five EC2 instances on AWS, one for the controlling node and two instances each for web servers and database servers. The controlling node will be used to install Ansible, which will then be used to connect to the web servers and database servers using SSH keys. Ansible playbooks and roles will be created to automate the setup of web servers and database servers with Nginx and Apache, respectively. The playbooks will also retrieve the total free disk space and available disk space on each server.
+The project  involves Setting up five EC2 instances on AWS, The main server which is the controller and 2 web servers ( webserver1 and 2), 2 databaseserver 1 ansd 2). The controller is the central (main) server from which Ansible will manage the other instances. The web servers will host Nginx, while the database servers will host Apache.
 
 
-### EILTE CORPORATION PROJECT WORKFLOW DIAGRAM
 
 
 
@@ -51,42 +50,44 @@ This workflow ensures that EliteCorpearations' web and database servers are conf
 
 ## TASK 1: LAUNCH AWS EC2 INSTANCES FOR FIVE SERVERS
 
-- I Logged in to the AWS Management Console, navigated to the EC2 dashboard , configured the instance details and clicked on "Launch Instance" as shown below.and select the desired Amazon Machine Image (AMI).
+- I Logged in to the AWS Management Console, navigated to the EC2 dashboard , configured the instance details and clicked on "Launch Instance" as shown below.
 
 ![pic](<img/Screenshot (830).png>)
 ![pic](<img>)
 
 ### Public IPs for the five servers
 
-- ControllerIP: 34.211.231.74
+- Controller: 34.211.231.74
 - Webserver1: 18.237.97.46
 - Webserver2: 35.160.214.69
-- Database Server1: 35.91.18.227
-- Database Sever2: 35.90.5.52
+- DBS 1: 35.91.18.227
+- DatabaseSever2: 35.90.5.52
 
-## TASK 2: INSTALLATION OF ANSIBLE ON THE CONTROLLING NODE
-- I started by connected through SSH into the controlling node using the key pair (AWS1.pem) as shown below
+## TASK 2: INSTALLATION OF ANSIBLE ON THE CONTROLLER TERMINAL
+- I started by connected through SSH into the controller terminal using the key pair (AWS1.pem) as shown below
 
-![alt text](<img/2a ssh conncetion to controller node.PNG>)
+![pic](<img>)
+
+
 
 
 - Next is to Install Ansible on the Controlling Node by first Updating the package list and then installing Ansible using the commands below
 
+
 $ sudo apt update
+$ sudo apt upgrade
 $ sudo apt install ansible
 
-![alt text](<img/2b Ansible installation.PNG>)
-
-![alt text](<img/2c Ansible installation confirmed.PNG>)
+![pic](<img>)
 
 
-## TASK 3: SSH KEY GENERATION AND CONNECTION TO TARGET SERVERS- 
+## TASK 3: TO GENERATION PRIVATE AND PUBLIC KEY
 
 - I started by Generating SSH keys using the ssh-keygen command.
 
 $ ssh-keygen 
 
-![alt text](<img/3a SSH Key generation.PNG>)
+![pic](<img>)
 
 - The generated public key was updated in the target server's authorised key
 
@@ -104,9 +105,9 @@ $ ssh-keygen
 
 - I created a new file in Ansible folder named Inventory using the touch command 
 
-![alt text](<img/4a inventory file created in Ansible.PNG>)
+![pic](<img>)
 
-- and I edited the content to define the inventory using the vi command adding the contents below
+- The file was edited  to define the inventory using the vi command adding the contents below
 
 Groups servers for targeted playbook execution.
 
@@ -118,8 +119,7 @@ Groups servers for targeted playbook execution.
 35.91.18.227
 35.90.5.52
 
-![alt text](<img/4b servers ip updated in inventory file.PNG>)
-
+![pic](<img>)
 
 ## TASK 5 : WEB SERVER AND DATABASE SERVER PLAYBOOK CREATED 
 
