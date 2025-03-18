@@ -84,9 +84,9 @@ Now, reference these variables in main.tf instead of hardcoded values.
 
 
 ## Automate Deployment with Terraform
-Initialize Terraform: terraform init
-Plan the deployment: terraform plan (preview changes before applying).
-Apply the configuration: terraform apply -auto-approve (creates the EC2 instance).
+* Initialize Terraform: terraform init
+* Plan the deployment: terraform plan (preview changes before applying).
+* Apply the configuration: terraform apply -auto-approve (creates the EC2 instance).
 
 
 ![pic](<img/Screenshot (901).png>)
