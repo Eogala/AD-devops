@@ -4,9 +4,19 @@
 ### PROJECT FOCUS : 
 Installation of Nginx on Elite’s corperations Web servers and Apache on their database servers using Ansible playbooks and roles:
 
-The project  involves Setting up five EC2 instances on AWS, The Ansible server will be called the controller server and 2 web servers ( webserver1 and 2), 2 databaseserver (1 and 2). The controller is the central (main) server from which Ansible will manage the other instances. The web servers will host Nginx, while the database servers will host Apache.
-Playbooks are written to define the tasks to be executed on webserver the (WBS) and database server (DBS).The playbooks are executed from the control node. Ansible connects to the web and database servers via SSH and performs the tasks defined in the playbooks.  After the playbooks are executed, the controller terminal  verifies that Nginx and Apache are installed and running on the respective servers.
+The project involves setting up five EC2 instances on AWS. The Ansible server, referred to as the controller server, will manage two web servers (webserver1 and webserver2) and two database servers (dbserver1 and dbserver2).
 
+The controller server acts as the central node from which Ansible will manage all other instances.
+The web servers will host Nginx, while the database servers will host Apache.
+
+Configuration & Execution Process:
+Playbooks will be written to specify the tasks that need to be executed on the web and database servers.
+
+Executing Playbooks:Playbooks will be run from the controller node to configure the target servers.Ansible will connect to the web and database servers via SSH and perform the defined tasks.
+
+Verification:After executing the playbooks, the controller terminal will verify that:
+Nginx is installed and running on the web servers.
+Apache is installed and running on the database servers.
 
 -----
 ## PROJECT TASK:
@@ -37,9 +47,9 @@ Playbooks are written to define the tasks to be executed on webserver the (WBS) 
 - Next is to Install Ansible on the Controller terminal  by first Updating the package list and then installing Ansible using the commands below
 
 
-$ sudo apt update
-$ sudo apt upgrade
-$ sudo apt install ansible
+* sudo apt update
+* sudo apt upgrade
+* sudo apt install ansible
 
 ![pic](<img/Screenshot (842).png>)
 ![pic](<img/Screenshot (841).png>)
@@ -144,11 +154,11 @@ $ systemctl status apache2
 
 ![pic](<img/Screenshot (836).png>)
 
-- Web Server (WBS)
+- Web Servers (WBS)
 
 ![pic](<img/Screenshot (838).png>)
 
-- Database Server (DBS)
+- Database Servers (DBS)
 
 ![pic](<img/Screenshot (839).png>)
 
