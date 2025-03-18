@@ -6,20 +6,20 @@
 Terraform is an Infrastructure as Code (IaC) tool that allows you to define, provision, and manage cloud infrastructure automatically using configuration files. It is developed by HashiCorp and supports multiple cloud providers like AWS, Azure, and Google Cloud.
 
 ## Benefits of Automating EC2 Instances with Terraform
-Efficiency: Automates provisioning, reducing manual work.
-Scalability: Easily deploy multiple instances by modifying configurations.
-Consistency: Infrastructure as Code (IaC) ensures identical setups across  environments.
-Version Control: Terraform configurations can be stored in Git, allowing easy tracking  of changes.
-Cost Optimization: Quickly destroy unused resources, reducing unnecessary cloud  expenses.
+* Efficiency: Automates provisioning, reducing manual work.
+* Scalability: Easily deploy multiple instances by modifying configurations.
+* Consistency: Infrastructure as Code (IaC) ensures identical setups across  environments.
+* Version Control: Terraform configurations can be stored in Git, allowing easy tracking  of changes.
+* Cost Optimization: Quickly destroy unused resources, reducing unnecessary cloud  expenses.
 
 
 ## Project Task Requirements
-Use Terraform to provision an EC2 instance in AWS.
+1. Use Terraform to provision an EC2 instance in AWS.
 Deploy the instance in a specific AWS region (e.g., us-east-1).
-Use variables instead of hardcoded values for (AWS region, Instance type {e.g., t2.micro},Key pair name)
+2. Use variables instead of hardcoded values for (AWS region, Instance type {e.g., t2.micro},Key pair name)
 Use Terraform State Management
-After applying the Terraform configuration, verify the Terraform state to ensure the infrastructure is being tracked.
-Modify and Destroy Infrastructure
+3. After applying the Terraform configuration, verify the Terraform state to ensure the infrastructure is being tracked.
+4. Modify and Destroy Infrastructure
 Modify the instance by changing the instance type and re-applying the configuration.
 Destroy the infrastructure once verification is complete.
 
